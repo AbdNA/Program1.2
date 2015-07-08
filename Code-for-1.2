@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice12
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Вы собираетесь проверить возможность прохождения шара с радиусом R через ромбовидное отверстие.");
+            Console.Write("Введите радиус шара:");
+                int R = int.Parse(Console.ReadLine());
+            Console.Write("Введите диагональ ромбовидного отверстия P:");
+                int P = int.Parse(Console.ReadLine());
+            Console.Write("Введите диагональ ромбовидного отверстия Q:");
+                int Q = int.Parse(Console.ReadLine());
+
+                double S = Q * 0.5;
+                double M = P * 0.5;
+                double A = Q * Q + P * P;
+                double F = (Q * P) / (4 * Math.Sqrt(A));
+
+                if (R <= F)
+                    Console.Write("Положительно. Шар может пройти в отверстие.");
+                else
+                    Console.Write("Отрицательно. Шар не может пройти в отверстие.");
+                Console.ReadKey();
+        }
+    }
+}
